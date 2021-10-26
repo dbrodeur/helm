@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "netcat-http.fullname" . }}
+  labels:
+    app: {{ include "netcat-http.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "netcat-http.fullname" . }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ include "netcat-http.fullname" . }}
+    spec:
+      containers:
+      - name: {{ include "netcat-http.fullname" . }}
+        image: multicloud/netcat
+        imagePullPolicy: Always
+        ports:
+        - containerPort: {{ .Values.port }}
+        env:
+        - name: TEXT
+          value: 'Hello from {{ include "netcat-http.fullname" . }}'
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do nc -l -p 80 -c 'echo \"HTTP/1.1 200 OK\n\n $TEXT @ $(date)\"'; done"]

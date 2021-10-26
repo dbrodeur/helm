@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ include "netcat-http.fullname" . }}
+  labels:
+    app: {{ include "netcat-http.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.port }}
+      name: {{ include "netcat-http.fullname" . }}
+  selector:
+    app: {{ include "netcat-http.fullname" . }}
