@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  netcat-http:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-10-26T06:32:45.728914-04:00"
+    description: A simple netcat http service
+    digest: 6bcffa9418a5a3d634d31c1ef8336ae2b593361bcfe7e534f17d927a3d79b499
+    name: netcat-http
+    type: application
+    urls:
+    - https://dbrodeur.github.io/helm/netcat-http-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-10-26T06:32:45.728496-04:00"
