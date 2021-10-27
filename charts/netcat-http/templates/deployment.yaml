@@ -25,4 +25,4 @@ spec:
         - name: TEXT
           value: 'Hello from {{ include "netcat-http.fullname" . }}'
         command: ["/bin/sh"]
-        args: ["-c", "while true; do nc -l -p 80 -c 'echo \"HTTP/1.1 200 OK\n\n $TEXT @ $(date)\"'; done"]
+        args: ["-c", "while true; do nc -l -p {{ .Values.port }} -c 'echo \"HTTP/1.1 200 OK\n\n $TEXT @ $(date)\"'; done"]
