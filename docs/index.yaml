@@ -3,12 +3,12 @@ entries:
   netcat-http:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-10-26T20:48:55.164253-04:00"
+    created: "2021-10-27T10:41:14.180148-04:00"
     description: A simple netcat http service
-    digest: 1f37b6613ed419132ed13635ffc50429fc529fd7dd893ebf036e1612d07f940b
+    digest: 9da68ccbd990c280f0f50c314b742db3a6a01ef307d3c86298568b4d3b5085f5
     name: netcat-http
     type: application
     urls:
     - https://dbrodeur.github.io/helm/netcat-http-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-26T20:48:55.163799-04:00"
+generated: "2021-10-27T10:41:14.179515-04:00"
